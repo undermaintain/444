@@ -16,11 +16,19 @@ if (isset($_POST['username'], $_POST['email'])) {
 include $front_matter['www'] . "/snippets/head.php";
 
 ?>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Archivists</h1>
+      </div>
+
+    <h3 align="right"><i>Hello, <?php echo $_SESSION['name']; ?>!</i></h3>
 <table style="width:100%">
     <tr>
         <td></td>
         <td><h1 align="center">My Archive</h1></td>
-        <td><p align="right"><i>Hello, <?php echo $_SESSION['name']; ?>!</i></p></td>
     </tr>
     <tr>
         <td>
@@ -54,4 +62,11 @@ include $front_matter['www'] . "/snippets/head.php";
         <td><p align="center"><b>Family Events</b></p></td>
     </tr>
 </table>
+<div align="right">
+<hr>
+      <footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+  </div>
+</div>
 </html>

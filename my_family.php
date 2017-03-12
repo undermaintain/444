@@ -3,14 +3,11 @@ $front_matter = array(
     'www' => '.',
     'page_title' => 'Archivists'
 );
-
 //Session Data
 ini_set('session.gc_maxlifetime', 3600);
 session_set_cookie_params(3600);
 session_start();
-
 include $front_matter['www'] . "/snippets/head.php";
-
 $sub = "";
 if(isset($_POST['designOneSubmission'])) {
     $sub = "design1";
@@ -21,7 +18,6 @@ if(isset($_POST['designOneSubmission'])) {
         }
     }
 }
-
 if(isset($_POST['designTwoSubmission'])) {
     $sub = "design2";
     $_SESSION['tree'] = array();
@@ -51,49 +47,33 @@ if(isset($_POST['designTwoSubmission'])) {
               $n = $n[1];
               $_SESSION['tree']['group-'.$arr[1]][(string)$n]['relation'] = $name;
             }
-
         }
     }       
 }
-
 ?>
-<table style="width:100%">
-    <tr>
-        <td></td>
-        <td><h1 align="center">My Archive</h1></td>
-        <td>
-            <div align="right">
-                <form action="<?php echo $front_matter['www']; ?>/home.php">
-                    <input type="Submit" value="Back to Dashboard">
-                </form>
-             <div align="right">
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-            <h3 align="center">My Family</h3>
-        </td>
-        <td>
-        </td>
-    </tr>   
+<div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Archivists</h1>
+      </div>
+
+    </div>
+<div class="container">
+    <div align="right">
+        <form action="<?php echo $front_matter['www']; ?>/home.php">
+            <button type="submit" class="btn btn-primary">Back To Dashboard</button>
+        </form>
+        <h3 align="center">My Family</h3>
+    </div>
+
 <?php if (!isset($_SESSION['tree'])) { ?>
-    <tr>
-        <td>
-        </td>
-        <td>
-            <div align="center">
-                <p>Your tree is empty</p><br>
-                <form action="<?php echo $front_matter['www']; ?>/createTree.php">
-                    <input type="Submit" value="Create Tree">
-                </form>
-            </div>
-        </td>
-        <td>
-        </td>
-    </tr>
-    </table>
+    <div align="center">
+        <p>Your tree is empty</p><br>
+        <form action="<?php echo $front_matter['www']; ?>/createTree.php">
+            <button type="submit" class="btn btn-primary">CreateTree</button>
+        </form>
+    </div>
 <?php } else { if ($sub == 'design1') { ?>
 <table style="width:100%" border="1px">
 <?php 
@@ -135,7 +115,6 @@ if(isset($_POST['designTwoSubmission'])) {
 </table>
 <?php } else { ?> </table> <?php
      $iPath = $front_matter['www']."/images/Littleguy.png";   
-
     foreach($_SESSION['tree'] as $group => $members) {
         echo '<h4 align="center">' . $_POST[$group] . '</h4>';
         $rows = "";
@@ -177,5 +156,11 @@ if(isset($_POST['designTwoSubmission'])) {
 ?>
 <?php } ?>
 <?php } ?>
-
+<div align="right">
+<hr>
+      <footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+  </div>
+</div>
 </html>

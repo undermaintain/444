@@ -24,23 +24,46 @@ include $front_matter['www'] . "/snippets/head.php";
   <title><?php echo $front_matter['page_title']; ?></title>
   <script src="<?php echo $front_matter['www']; ?>/dependencies/jquery-3.1.1.js"></script>
 </head>
+
 <body>
-<h1 align="center">Archivists</h1> <!-- TODO: CENTER -->
-<table style="width:100%">
-    <tr>
-        <td><img src="<?php echo $front_matter['www']; ?>/images/video_u6.jpg"></td>
-        <td border="1px">
-            <div align="center">
-                <h3><b>What is Archivist?</b></h3>
-                <p>A place to store family information to share with other family members or the public</p><br>
-                <form method="post" action="?">
-                    <input type="Submit" value="Sign Up" name="signup">
-                    <br>
-                    <input type="Submit" value="Login" name="login">
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Archivists</h1>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <img src="<?php echo $front_matter['www']; ?>/images/video_u6.jpg">
+        </div>
+        <div class="col-md-6">
+          <h2>What is Archivists?</h2>
+          <p>A place to store family information to share with other family members or the public. </p>
+           <form method="post" action="?">
+                    <button type="submit" class="btn btn-primary" name="signup">Sign Up</button>
+                    <button type="submit" class="btn btn-success" name="login">Login</button>
                 </form>
-            </div>
-        </td>
-    </tr>
-</table>
+       </div>
+       </div>
+
+      <hr>
+
+
+
+      <footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+  
+
+
 </body>
 </html>

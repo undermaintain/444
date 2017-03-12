@@ -12,8 +12,17 @@ session_start();
 include $front_matter['www'] . "/snippets/head.php";
 
 ?>
+<div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Archivists</h1>
+      </div>
+
+    </div>
+<div class="container">
 <form align="right" action="<?php echo $front_matter['www']; ?>/createTree2.php">
-    <input type="Submit" value="Use Alternative Design ->">
+    <button type="submit" class="btn btn-primary">Use Alternative Design-></button>
 </form>
 <br>
 <form id="designOne" align="left" method="post" action="<?php echo $front_matter['www']; ?>/my_family.php">
@@ -50,10 +59,12 @@ include $front_matter['www'] . "/snippets/head.php";
     <input type="text" name="my-sister" id="my-sister">
     <button id="btn-my-sister" onClick="remove('my-sister')">Remove</button>
     <br id="br-my-sister">
-    <br id="sv-br"><input id="dOneSub" type="Submit" value="Save">
+    <br id="sv-br"><input id="dOneSub" type="Submit" value="Save" class="btn btn-success">
 </form>
+<br>
 
-<button id="add-btn">Add More</button>
+<button class="btn btn-primary" id="add-btn">Add More</button>
+
 
 <div id="addMoreForm" >
     <label for="relation">Relation of person to you: </label>
@@ -96,4 +107,11 @@ function addAnother() {
 }
 
 </script>
+<div align="right">
+<hr>
+      <footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+  </div>
+</div>
 </html>

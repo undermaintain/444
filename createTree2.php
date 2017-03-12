@@ -12,8 +12,14 @@ session_start();
 include $front_matter['www'] . "/snippets/head.php";
 
 ?>
+<div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Archivists</h1>
+      </div>
 <form align="right" action="<?php echo $front_matter['www']; ?>/createTree.php">
-    <input type="Submit" value="Use Alternative Design ->">
+    <button type="submit" class="btn btn-primary">Use Alternative Design-></button>
 </form>
 <br>
 <p>Create relation groups like Grandparents, Uncles, Siblings, etc. Then add members to those relation groups.</p>
@@ -34,8 +40,8 @@ include $front_matter['www'] . "/snippets/head.php";
         </ul>
     </div>
 </form>
-<button onClick="addRelationGroup()" style="height:47px">Add Relation Group</button>
-<input form="designTwo" type="Submit" value="Create Tree">
+<button onClick="addRelationGroup()" style="height:47px" class="btn btn-primary">Add Relation Group</button>
+<input form="designTwo" type="Submit" value="Create Tree" class="btn btn-success">
 
 <script type="text/javascript">
 var MEMCOUNT = {
@@ -72,4 +78,11 @@ function addRelationGroup() {
 }
 
 </script>
+<div align="right">
+<hr>
+      <footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+  </div>
+</div>
 </html>

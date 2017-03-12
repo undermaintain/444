@@ -12,18 +12,36 @@ session_start();
 include $front_matter['www'] . "/snippets/head.php";
 
 ?>
-<h1 align="center">Login to your Archivist Account</h1>
+    
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 align="center">Login to your Archivist Account</h1>
+      </div>
+
+    </div>
+
 <br>
-<form align="center" method="post" action="<?php echo $front_matter['www']; ?>/home.php">
+<div class="container">
+<form align="center" method="post" action="<?php echo $front_matter['www']; ?>/home.php" class="navbar-form">
     <label for="username">Username: </label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username" class="form-control">
+    <br>
     <br>
     <input type="hidden" id="email" name="email" value="dummy@gmail.com">
     <label for="username">Password: </label>
-    <input type="text" id="password">
+    <input type="text" id="password" class="form-control">
     <br>
-    <input type="Submit" name="login" value="Login">
+    <br>
+    <button type="submit" class="btn btn-primary" name="login">Login</button>
+    <br>
     <br>
     <p>Forgot your password? <a href=".">Click here</a></p>
 </form>
+<hr>
+<footer>
+        <p>&copy; 2017 CPSC 444, The Archivists</p>
+      </footer>
+    </div> 
 </html>
